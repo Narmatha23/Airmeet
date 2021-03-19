@@ -16,36 +16,7 @@ function hideWord($word) {
   setTimeout(function(){ hideWord(nextWord) }, animationDelay);
 }
 
-function takeNext($word) {
-  return (!$word.is(':last-child')) ? $word.next() : $word.parent().children().eq(0);
-}
 
-function switchWord($oldWord, $newWord) {
-  $oldWord.removeClass('is-visible').addClass('is-hidden');
-  $newWord.removeClass('is-hidden').addClass('is-visible');
-}
-
-
-var swiper = new Swiper('.swiper-container', {
-  slidesPerView: 3,
-  direction: getDirection(),
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  on: {
-    resize: function () {
-      swiper.changeDirection(getDirection());
-    }
-  }
-});
-
-function getDirection() {
-  var windowWidth = window.innerWidth;
-  var direction = window.innerWidth <= 760 ? 'vertical' : 'horizontal';
-
-  return direction;
-}
 
 
 const myFunction = () => {
@@ -108,3 +79,27 @@ $('div').on('click',function(e) {
       $('#tab-1').removeClass('active-btn');
   }
 });
+
+
+<script>
+        var swiper = new Swiper('.swiper-container', {
+          slidesPerView: 3,
+          direction: getDirection(),
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          on: {
+            resize: function () {
+              swiper.changeDirection(getDirection());
+            }
+          }
+        });
+    
+        function getDirection() {
+          var windowWidth = window.innerWidth;
+          var direction = window.innerWidth <= 760 ? 'vertical' : 'horizontal';
+    
+          return direction;
+        }
+      </script>
