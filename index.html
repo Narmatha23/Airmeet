@@ -156,43 +156,45 @@
                                                   </div>
                                                   <div class="navigation widget-divider">
                                                       <div class="widgetcontainer">
-                                                          <div class="swiper-container">
-                                                              <div class="swiper-wrapper">
-                                                                <div class="swiper-slide">
-                                                                    <img src="images\1.png"class="img-size">
-                                                                </div>
+                                                        <div class="swiper-container">
+                                                            <div class="swiper-wrapper">
+                                                              <div class="swiper-slide">
+                                                                  <img src="images\1.png"class="img-size">
+                                                              </div>
+                                                             <div class="swiper-slide">
+                                                                 <img src="images\2.png"class="img-size">
+                                                             </div>
+                                                              <div class="swiper-slide">
+                                                                  <img src="images\3.png"class="img-size">
+                                                              </div>
                                                                <div class="swiper-slide">
-                                                                   <img src="images\2.png"class="img-size">
+                                                                  <img src="images\4.png"class="img-size">
                                                                </div>
                                                                 <div class="swiper-slide">
-                                                                    <img src="images\3.png"class="img-size">
+                                                                   <img src="images\5.png"class="img-size">
                                                                 </div>
-                                                                 <div class="swiper-slide">
-                                                                    <img src="images\4.png"class="img-size">
+                                                                  <div class="swiper-slide">
+                                                                     <img src="images\6.png"class="img-size">
+                                                                </div>
+                                                                <div class="swiper-slide">
+                                                                    <img src="images\7.png"class="img-size">
+                                                                </div>
+                                                                <div class="swiper-slide">
+                                                                     <img src="images\8.png"class="img-size">
                                                                  </div>
-                                                                  <div class="swiper-slide">
-                                                                     <img src="images\5.png"class="img-size">
-                                                                  </div>
-                                                                    <div class="swiper-slide">
-                                                                       <img src="images\6.png"class="img-size">
-                                                                  </div>
-                                                                  <div class="swiper-slide">
-                                                                      <img src="images\7.png"class="img-size">
-                                                                  </div>
-                                                                  <div class="swiper-slide">
-                                                                       <img src="images\8.png"class="img-size">
-                                                                   </div>
-                                                                  <div class="swiper-slide">
-                                                                    <img src="images\9.png"class="img-size">
-                                                                   </div>
-                                                                  <div class="swiper-slide">
-                                                                      <img src="images\10.png"class="img-size">
-                                                                  </div>
-                                                            </div>
-                                                                 <div class="swiper-button-next "style="color: #6a4cff;"></div>
-                                                                  <div class="swiper-button-prev"style="color: #6a4cff;"></div> 
+                                                                <div class="swiper-slide">
+                                                                  <img src="images\9.png"class="img-size">
+                                                                 </div>
+                                                                <div class="swiper-slide">
+                                                                    <img src="images\10.png"class="img-size">
+                                                                </div>
+                                                          </div>
+                                                               <div class="swiper-button-next "style="color: #6a4cff;"></div>
+                                                                <div class="swiper-button-prev"style="color: #6a4cff;"></div> 
+                                                           
+                                                      </div>
                                                              
-                                                        </div>
+                                                        
                                                       </div>
                                                   </div>
                                                   <div class="widget-button widget-divider">
@@ -741,6 +743,28 @@
     
     <script src="js\script.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+          slidesPerView: 3,
+          direction: getDirection(),
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          on: {
+            resize: function () {
+              swiper.changeDirection(getDirection());
+            }
+          }
+        });
+    
+        function getDirection() {
+          var windowWidth = window.innerWidth;
+          var direction = window.innerWidth <= 760 ? 'vertical' : 'horizontal';
+    
+          return direction;
+        }
+      </script>
     
 </body>
 </html>
